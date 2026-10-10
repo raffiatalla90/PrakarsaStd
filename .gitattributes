@@ -6,6 +6,20 @@
 *.md diff=markdown
 *.php diff=php
 
+# Language stats: surface the React (TypeScript/JSX) front end next to PHP.
+*.tsx linguist-language=TypeScript linguist-detectable=true
+*.ts  linguist-language=TypeScript linguist-detectable=true
+resources/css/* linguist-language=CSS linguist-detectable=true
+resources/js/*  linguist-detectable=true
+
+# Keep generated/template files out of the language breakdown.
+composer.lock linguist-generated=true linguist-detectable=false
+package-lock.json linguist-generated=true linguist-detectable=false
+legacy-static/* linguist-documentation=true linguist-detectable=false
+config/* linguist-detectable=false
+database/* linguist-detectable=false
+tests/* linguist-detectable=false
+
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
