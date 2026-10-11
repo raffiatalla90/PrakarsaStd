@@ -7,15 +7,15 @@ export default function About() {
                 <Label no="01">Tentang Kami</Label>
                 <div className="about-grid">
                     <h2 id="tentang-h" data-reveal>
-                        Teknologi dengan<br />Tujuan.<br />
-                        <em>Desain dengan Arah.</em>
+                        Website yang Tepat.<br />
+                        Dibangun untuk <em>Bertumbuh.</em>
                     </h2>
                     <div className="about-side" data-reveal>
                         <p className="about-lead">
-                            Prakarsa Studio memadukan kreativitas, desain, rekayasa perangkat lunak, dan teknologi modern untuk mengubah ide menjadi solusi digital yang relevan bagi bisnis.
+                            Prakarsa Studio adalah partner pembuatan website untuk bisnis Anda — dari company profile, landing page, hingga web application, dirancang dan dibangun hingga siap mendatangkan hasil.
                         </p>
                         <p className="about-sub">
-                            Kami percaya setiap produk digital yang baik dimulai dari pemahaman mendalam, bukan sekadar tampilan, tetapi dampak nyata yang ingin diciptakan.
+                            Setiap halaman kami susun dengan struktur yang rapi, performa yang ringan, dan alur yang jelas — supaya pengunjung betah, mudah menemukan informasi, dan lebih siap menghubungi Anda.
                         </p>
                         <a className="link-line" href="#portofolio">Lihat karya kami <Arrow /></a>
                     </div>

@@ -65,12 +65,20 @@ export default function Services() {
                         Layanan end-to-end untuk membangun kehadiran dan produk digital yang relevan, fungsional, serta siap berkembang.
                     </p>
                 </div>
-                <ul className="svc-list">
+                <ul className="svc-list" data-reveal>
                     {ITEMS.map((s) => (
-                        <li key={s.no}>
-                            <a className="svc-row" href="#kontak">
-                                <span className="svc-no">{s.no}</span>
+                        <li key={s.no} data-reveal>
+                            <a
+                                className="svc-card"
+                                href="#kontak"
+                                onMouseMove={(e) => {
+                                    const r = e.currentTarget.getBoundingClientRect();
+                                    e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+                                    e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+                                }}
+                            >
                                 <span className="svc-ico">{s.icon}</span>
+                                <span className="svc-no">{s.no}</span>
                                 <span className="svc-title">{s.title}</span>
                                 <span className="svc-text">{s.text}</span>
                                 <span className="svc-go"><Arrow /></span>

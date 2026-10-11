@@ -1,5 +1,6 @@
 import { createInertiaApp } from '@inertiajs/react';
 import { createRoot } from 'react-dom/client';
+import Splash from './Components/Splash';
 
 document.documentElement.classList.add('js');
 
@@ -9,6 +10,11 @@ createInertiaApp({
         return pages[`./Pages/${name}.tsx`] as never;
     },
     setup({ el, App, props }) {
-        createRoot(el).render(<App {...props} />);
+        createRoot(el).render(
+            <>
+                <Splash />
+                <App {...props} />
+            </>,
+        );
     },
 });

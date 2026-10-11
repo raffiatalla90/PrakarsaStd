@@ -48,20 +48,39 @@ export default function Portfolio() {
                 <div className="case-pair">
                     <article className="case" data-reveal>
                         <div className="stage stage-blue" data-reveal>
-                            <Mock className="mock-shot" url="getmasjid.com">
-                                <img
-                                    className="shot"
-                                    src="/images/getmasjid.png"
-                                    width="3022"
-                                    height="1720"
-                                    loading="lazy"
-                                    decoding="async"
-                                    alt="Tangkapan layar aplikasi GetMasjid: jadwal sholat dan peta masjid terdekat."
-                                />
-                            </Mock>
+                            <div className="shot-combo">
+                                <Mock className="mock-shot" url="getmasjid.com">
+                                    <img
+                                        className="shot"
+                                        src="/images/getmasjid.png"
+                                        width="3022"
+                                        height="1720"
+                                        loading="lazy"
+                                        decoding="async"
+                                        alt="Tangkapan layar web aplikasi GetMasjid: jadwal sholat dan peta masjid terdekat."
+                                    />
+                                </Mock>
+                                <div className="mock-phone" aria-hidden="true">
+                                    <span className="phone-notch" />
+                                    <div className="phone-screen">
+                                        <img
+                                            className="phone-shot"
+                                            src="/images/getmasjid-mobile.png"
+                                            width="560"
+                                            height="2500"
+                                            loading="lazy"
+                                            decoding="async"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <p className="caps caps-flame">02 / Web Application (PWA)</p>
-                        <h3>Sistem yang membuat pekerjaan lebih sederhana.</h3>
+                        <h3>GetMasjid, pendamping ibadah harian jamaah.</h3>
+                        <p className="case-desc">
+                            Aplikasi web yang menampilkan jadwal sholat lengkap, waktu imsak, serta peta masjid terdekat lengkap dengan rute dan detailnya. Dipakai sebagai PWA, jadi bisa dibuka cepat dari layar utama HP tanpa memasang aplikasi tambahan.
+                        </p>
                         <a className="link-line link-block" href="https://getmasjid.com" target="_blank" rel="noopener noreferrer">Lihat Detail Proyek <Arrow /></a>
                     </article>
 

@@ -5,13 +5,12 @@ import Hero from '../Components/Hero';
 import About from '../Components/About';
 import Services from '../Components/Services';
 import Portfolio from '../Components/Portfolio';
-import Why from '../Components/Why';
 import Contact from '../Components/Contact';
 import Footer from '../Components/Footer';
 
 export default function Home() {
     useEffect(() => {
-        const items = document.querySelectorAll('[data-reveal]');
+        const items = document.querySelectorAll('[data-reveal], .section, .page-hero, .page-cta');
         if (!('IntersectionObserver' in window)) {
             items.forEach((el) => el.classList.add('in'));
             return;
@@ -40,7 +39,6 @@ export default function Home() {
                 <About />
                 <Services />
                 <Portfolio />
-                <Why />
                 <Contact />
             </main>
             <Footer />
