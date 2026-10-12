@@ -104,6 +104,9 @@ export default function Header({ active = 'beranda', isHome = true }: { active?:
                     <a href="/tentang" aria-current={current === 'tentang' ? 'location' : undefined} onMouseEnter={(e) => movePill(e.currentTarget)}>
                         Tentang Kami
                     </a>
+                    <a href="/blog" aria-current={current === 'blog' ? 'location' : undefined} onMouseEnter={(e) => movePill(e.currentTarget)}>
+                        Blog
+                    </a>
                     <a className="nav-cta" href={`${home}#kontak`}>
                         Mulai Proyek <Arrow />
                     </a>

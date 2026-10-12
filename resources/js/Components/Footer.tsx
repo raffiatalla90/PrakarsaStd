@@ -23,6 +23,7 @@ export default function Footer() {
                     <nav className="foot-links" aria-label="Footer">
                         <a href="/">Beranda</a>
                         <a href="/tentang">Tentang Kami</a>
+                        <a href="/blog">Blog</a>
                         <a href="/#layanan">Layanan</a>
                         <a href="/#portofolio">Portofolio</a>
                         <a href="/#kontak">Kontak</a>

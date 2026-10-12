@@ -5,10 +5,12 @@ import Hero from '../Components/Hero';
 import About from '../Components/About';
 import Services from '../Components/Services';
 import Portfolio from '../Components/Portfolio';
+import BlogTeaser from '../Components/BlogTeaser';
 import Contact from '../Components/Contact';
 import Footer from '../Components/Footer';
+import type { BlogPostSummary } from '../types';
 
-export default function Home() {
+export default function Home({ posts = [] }: { posts?: BlogPostSummary[] }) {
     useEffect(() => {
         const items = document.querySelectorAll('[data-reveal], .section, .page-hero, .page-cta');
         if (!('IntersectionObserver' in window)) {
@@ -41,6 +43,7 @@ export default function Home() {
                 <About />
                 <Services />
                 <Portfolio />
+                <BlogTeaser posts={posts} />
                 <Contact />
             </main>
             <Footer />

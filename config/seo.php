@@ -24,6 +24,15 @@ return [
         'country' => 'ID',
     ],
 
+    /*
+    | Google Search Console verification. Paste the "HTML tag" content value
+    | (or the whole <meta> tag) into GOOGLE_SITE_VERIFICATION in .env and the
+    | meta tag is rendered site-wide automatically.
+    */
+    'verification' => [
+        'google' => env('GOOGLE_SITE_VERIFICATION'),
+    ],
+
     'pages' => [
         'home' => [
             'title' => 'Prakarsa Studio — Jasa Pembuatan Website & Aplikasi Web Profesional',
@@ -33,6 +42,16 @@ return [
         'about' => [
             'title' => 'Tentang Kami — Jasa Pembuatan Website Bisnis | Prakarsa Studio',
             'description' => 'Kenali Prakarsa Studio, partner pembuatan website bisnis Anda. Kami merancang company profile, landing page, hingga web application yang cepat, mudah ditemukan, dan siap bertumbuh.',
+            'robots' => 'index, follow',
+        ],
+        'blog.index' => [
+            'title' => 'Blog — Tips Website & Strategi Digital | Prakarsa Studio',
+            'description' => 'Kumpulan artikel dan panduan seputar pembuatan website, SEO, dan strategi digital untuk membantu bisnis Anda tampil dan bertumbuh secara online.',
+            'robots' => 'index, follow',
+        ],
+        'blog.show' => [
+            'title' => 'Artikel | Prakarsa Studio',
+            'description' => 'Artikel Prakarsa Studio seputar pembuatan website, SEO, dan strategi digital untuk bisnis.',
             'robots' => 'index, follow',
         ],
     ],
