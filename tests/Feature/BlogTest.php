@@ -39,4 +39,25 @@ class BlogTest extends TestCase
     {
         $this->get('/')->assertStatus(200)->assertSee('/blog/', false);
     }
+
+    public function test_rss_feed_lists_posts(): void
+    {
+        $response = $this->get('/blog/feed.xml');
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/rss+xml; charset=UTF-8');
+        $response->assertSee('<rss', false);
+        $response->assertSee('cara-memilih-jasa-pembuatan-website', false);
+    }
+
+    public function test_indexnow_key_route_serves_key(): void
+    {
+        $key = (string) config('seo.indexnow.key');
+
+        $this->get('/'.$key.'.txt')
+            ->assertStatus(200)
+            ->assertSee($key, false);
+
+        $this->get('/wrong-key-12345.txt')->assertStatus(404);
+    }
 }

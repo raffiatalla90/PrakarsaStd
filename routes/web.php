@@ -12,6 +12,41 @@ Route::get('/', fn () => Inertia::render('Home', [
 Route::get('/tentang', fn () => Inertia::render('Tentang'))->name('about');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+
+/*
+| RSS feed. Registered before /blog/{slug} so the slug route does not swallow
+| "feed.xml". Helps feed readers and some crawlers discover new articles.
+*/
+Route::get('/blog/feed.xml', function () {
+    $siteUrl = rtrim((string) config('seo.site.url'), '/');
+    $siteName = (string) config('seo.site.name');
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+    $xml .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'."\n";
+    $xml .= '  <channel>'."\n";
+    $xml .= '    <title>'.e($siteName.' — Blog').'</title>'."\n";
+    $xml .= '    <link>'.e($siteUrl.'/blog').'</link>'."\n";
+    $xml .= '    <description>'.e('Artikel dan panduan seputar pembuatan website, SEO, dan strategi digital.').'</description>'."\n";
+    $xml .= '    <language>id-ID</language>'."\n";
+    $xml .= '    <atom:link href="'.e($siteUrl.'/blog/feed.xml').'" rel="self" type="application/rss+xml" />'."\n";
+
+    foreach (Blog::summaries() as $post) {
+        $url = $siteUrl.'/blog/'.$post['slug'];
+        $ts = strtotime((string) $post['date']) ?: time();
+        $xml .= '    <item>'."\n";
+        $xml .= '      <title>'.e($post['title']).'</title>'."\n";
+        $xml .= '      <link>'.e($url).'</link>'."\n";
+        $xml .= '      <guid isPermaLink="true">'.e($url).'</guid>'."\n";
+        $xml .= '      <pubDate>'.date(DATE_RSS, $ts).'</pubDate>'."\n";
+        $xml .= '      <description>'.e($post['description']).'</description>'."\n";
+        $xml .= '    </item>'."\n";
+    }
+
+    $xml .= '  </channel>'."\n".'</rss>'."\n";
+
+    return response($xml, 200, ['Content-Type' => 'application/rss+xml; charset=UTF-8']);
+})->name('blog.feed');
+
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::post('/kontak', [ContactController::class, 'store'])

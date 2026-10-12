@@ -168,6 +168,7 @@
     @endif
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="alternate" type="application/rss+xml" title="Prakarsa Studio — Blog" href="{{ $siteUrl }}/blog/feed.xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
