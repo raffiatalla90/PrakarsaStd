@@ -31,7 +31,9 @@ export default function Home() {
 
     return (
         <>
-            <Head title="Prakarsa Studio: Initiating Tomorrow's Website Solution" />
+            <Head title="Prakarsa Studio — Jasa Pembuatan Website & Aplikasi Web Profesional">
+                <meta name="description" content="Prakarsa Studio adalah jasa pembuatan website company profile, landing page, dan aplikasi web untuk bisnis di Jakarta & seluruh Indonesia. Cepat, modern, dan siap mendatangkan hasil." />
+            </Head>
             <a className="skip" href="#utama">Lewati ke konten</a>
             <Header />
             <main id="utama">
