@@ -1,0 +1,60 @@
+name: Deploy — Build & Publish Assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resources/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.*'
+      - 'tsconfig*.json'
+      - 'tailwind.config.*'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production assets
+        run: npm run build
+
+      - name: Publish built assets back to the repo
+        env:
+          GIT_AUTHOR_NAME: raffiatalla90
+          GIT_AUTHOR_EMAIL: raffiatalla9090@gmail.com
+          GIT_COMMITTER_NAME: raffiatalla90
+          GIT_COMMITTER_EMAIL: raffiatalla9090@gmail.com
+        run: |
+          git add -f public/build
+          if git diff --staged --quiet; then
+            echo "No asset changes to publish"
+            exit 0
+          fi
+          git commit -m "chore(deploy): build assets [skip ci]"
+          git push
+
+      # The hosting server pulls from GitHub every 5 minutes (cron -> deploy.sh),
+      # so no inbound SSH is required. See deploy.sh in the repo root.
+      - name: Summary
+        run: echo "Assets published. Server will pick this up on its next 5-minute cron run."

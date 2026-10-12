@@ -1,6 +1,7 @@
 #!/bin/bash
 # Auto-deploy script for Prakarsa Studio (Laravel + React) on Rumahweb shared hosting.
-# Pulled from GitHub by cron. Server has no Node, so React assets are built by GitHub Actions.
+# Pulled from GitHub by cron. The server has no Node, so React assets are built by
+# the GitHub Actions "Deploy — Build & Publish Assets" workflow and committed back.
 #
 # Usage: bash ~/prakarsa/deploy.sh
 
@@ -28,10 +29,15 @@ log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG"; }
 
 log "=== deploy start ==="
 
-# --- fetch remote without touching working tree ---
+# --- fetch remote without touching the working tree ---
 git fetch origin main --quiet 2>>"$LOG"
 LOCAL=$(git rev-parse HEAD 2>/dev/null)
 REMOTE=$(git rev-parse origin/main 2>/dev/null)
+
+if [ -z "$REMOTE" ]; then
+  log "ERROR: could not resolve origin/main"
+  exit 1
+fi
 
 if [ "$LOCAL" = "$REMOTE" ]; then
   log "up to date ($LOCAL) — nothing to do"
@@ -40,17 +46,17 @@ fi
 
 log "updating $LOCAL -> $REMOTE"
 
-# --- preserve local-only files ---
+# --- back up local-only files (gitignored, but keep them safe) ---
 cp -f .env /tmp/prakarsa.env.bak 2>/dev/null
 cp -f database/database.sqlite /tmp/prakarsa.sqlite.bak 2>/dev/null
 
-# --- pull ---
-if ! git pull origin main --ff-only >>"$LOG" 2>&1; then
-  log "ERROR: git pull failed (non fast-forward). Manual attention needed."
+# --- sync to remote (reset, not pull: history may be rewritten upstream) ---
+if ! git reset --hard "$REMOTE" >>"$LOG" 2>&1; then
+  log "ERROR: git reset --hard failed"
   exit 1
 fi
 
-# --- restore local-only files (in case they were touched) ---
+# --- restore local-only files just in case ---
 [ -f /tmp/prakarsa.env.bak ] && cp -f /tmp/prakarsa.env.bak .env
 [ -f /tmp/prakarsa.sqlite.bak ] && cp -f /tmp/prakarsa.sqlite.bak database/database.sqlite
 
