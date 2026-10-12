@@ -267,6 +267,7 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); }
 .mock-shot { width: 88%; margin-top: 2%; }
 .mock-shot .mock-screen { aspect-ratio: 590 / 330; background: var(--deep); }
 .shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.mock-shot picture, .phone-screen picture { display: contents; }
 
 /* desktop + phone composition for the PWA case */
 .shot-combo { position: relative; width: 100%; height: 100%; display: grid; place-items: center; }

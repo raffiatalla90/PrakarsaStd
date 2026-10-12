@@ -50,28 +50,34 @@ export default function Portfolio() {
                         <div className="stage stage-blue" data-reveal>
                             <div className="shot-combo">
                                 <Mock className="mock-shot" url="getmasjid.com">
-                                    <img
-                                        className="shot"
-                                        src="/images/getmasjid.png"
-                                        width="1800"
-                                        height="1024"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="Tangkapan layar web aplikasi GetMasjid: jadwal sholat dan peta masjid terdekat."
-                                    />
+                                    <picture>
+                                        <source srcSet="/images/getmasjid.webp" type="image/webp" />
+                                        <img
+                                            className="shot"
+                                            src="/images/getmasjid.png"
+                                            width="1200"
+                                            height="683"
+                                            loading="lazy"
+                                            decoding="async"
+                                            alt="Tangkapan layar web aplikasi GetMasjid: jadwal sholat dan peta masjid terdekat."
+                                        />
+                                    </picture>
                                 </Mock>
                                 <div className="mock-phone" aria-hidden="true">
                                     <span className="phone-notch" />
                                     <div className="phone-screen">
-                                        <img
-                                            className="phone-shot"
-                                            src="/images/getmasjid-mobile.png"
-                                            width="480"
-                                            height="2143"
-                                            loading="lazy"
-                                            decoding="async"
-                                            alt=""
-                                        />
+                                        <picture>
+                                            <source srcSet="/images/getmasjid-mobile.webp" type="image/webp" />
+                                            <img
+                                                className="phone-shot"
+                                                src="/images/getmasjid-mobile.png"
+                                                width="300"
+                                                height="1339"
+                                                loading="lazy"
+                                                decoding="async"
+                                                alt=""
+                                            />
+                                        </picture>
                                     </div>
                                 </div>
                             </div>
