@@ -11,7 +11,7 @@ export function Arrow() {
 export function Logo({ className = '' }: { className?: string }) {
     return (
         <span className={`logo ${className}`}>
-            <img className="logo-img" src="/images/prakarsa-logo.png" width="1350" height="754" alt="Prakarsa Studio" decoding="async" />
+            <img className="logo-img" src="/images/prakarsa-logo.png" width="900" height="503" alt="Prakarsa Studio" decoding="async" />
         </span>
     );
 }

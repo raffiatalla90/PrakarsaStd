@@ -7,6 +7,60 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Prakarsa Studio
+
+Company profile site for Prakarsa Studio — a web development studio that fuses
+development with AI. Built with **Laravel + React 19 via Inertia**, styled with
+plain CSS in `resources/css/app.css`.
+
+Content is in Indonesian; slogans stay English. The contact section routes
+visitors to a conversation (WhatsApp/email), and `POST /kontak` still persists
+submissions to `contact_messages` with optional email via `CONTACT_RECEIVER`.
+
+## Local development
+
+```bash
+composer install
+npm install
+npm run dev            # Vite dev server
+php artisan serve      # http://127.0.0.1:8000
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## End-to-end tests (Playwright)
+
+UI and functional tests live in `tests/e2e`. They run against a local server,
+across a desktop and a mobile project.
+
+```bash
+npx playwright install chromium   # first time only
+npm run test:e2e                  # run the full suite
+npm run test:e2e:ui               # interactive UI mode
+npm run test:e2e:report           # open the last HTML report
+```
+
+By default the config boots its own server on `:8000` and raises the contact
+rate limit (`CONTACT_THROTTLE`) so the suite can exercise the endpoint. To
+target an already-running server, set `E2E_SKIP_SERVER=1` (and `E2E_BASE_URL`
+if it is not on `127.0.0.1:8000`).
+
+## Project layout
+
+| Path | Purpose |
+| --- | --- |
+| `resources/js/Pages` | Inertia pages (`Home`, `Tentang`) |
+| `resources/js/Components` | UI sections (Hero, Services, Portfolio, …) |
+| `public/images` | Shipping raster assets |
+| `tests/e2e` | Playwright UI + functional tests |
+| `assets/source` | Raw working assets (gitignored) |
+
+---
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

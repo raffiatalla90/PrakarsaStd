@@ -13,4 +13,7 @@ return [
     // URL profil sosial. Kosong = teks tampil tanpa tautan.
     'instagram' => env('INSTAGRAM_URL'),
     'linkedin' => env('LINKEDIN_URL'),
+
+    // Pembatasan laju endpoint formulir kontak (format throttle Laravel: "max,minutes").
+    'contact_throttle' => env('CONTACT_THROTTLE', '5,1'),
 ];

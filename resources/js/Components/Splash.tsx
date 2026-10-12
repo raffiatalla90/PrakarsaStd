@@ -44,7 +44,7 @@ export default function Splash() {
             <div className="splash-inner">
                 <div className="splash-mark">
                     <span className="splash-shine" />
-                    <img className="splash-logo" src="/images/prakarsa-logo-wordmark.png" width="1621" height="216" alt="" decoding="async" />
+                    <img className="splash-logo" src="/images/prakarsa-logo-wordmark.png" width="1000" height="133" alt="" decoding="async" />
                 </div>
                 <span className="splash-rule" />
                 <p className="splash-tag">The First Step in Digital Innovation</p>

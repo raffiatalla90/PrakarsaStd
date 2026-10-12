@@ -77,8 +77,8 @@ export default function Header({ active = 'beranda', isHome = true }: { active?:
                     <img
                         className="brand-logo"
                         src="/images/prakarsa-logo-wordmark.png"
-                        width="1621"
-                        height="216"
+                        width="1000"
+                        height="133"
                         alt="Prakarsa Studio"
                         decoding="async"
                     />

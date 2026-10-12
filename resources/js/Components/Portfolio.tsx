@@ -53,8 +53,8 @@ export default function Portfolio() {
                                     <img
                                         className="shot"
                                         src="/images/getmasjid.png"
-                                        width="3022"
-                                        height="1720"
+                                        width="1800"
+                                        height="1024"
                                         loading="lazy"
                                         decoding="async"
                                         alt="Tangkapan layar web aplikasi GetMasjid: jadwal sholat dan peta masjid terdekat."
@@ -66,8 +66,8 @@ export default function Portfolio() {
                                         <img
                                             className="phone-shot"
                                             src="/images/getmasjid-mobile.png"
-                                            width="560"
-                                            height="2500"
+                                            width="480"
+                                            height="2143"
                                             loading="lazy"
                                             decoding="async"
                                             alt=""
