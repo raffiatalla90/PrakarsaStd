@@ -84,4 +84,7 @@ $PHP artisan route:cache  >>"$LOG" 2>&1
 $PHP artisan view:cache   >>"$LOG" 2>&1
 $PHP artisan event:cache  >>"$LOG" 2>&1
 
+# --- notify search engines about new/updated URLs (IndexNow: Bing/Yandex) ---
+$PHP artisan seo:ping >>"$LOG" 2>&1
+
 log "=== deploy done ($REMOTE) ==="

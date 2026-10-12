@@ -33,6 +33,15 @@ return [
         'google' => env('GOOGLE_SITE_VERIFICATION'),
     ],
 
+    /*
+    | IndexNow (Bing, Yandex, Seznam, Naver). The key file lives at
+    | public/<key>.txt and must contain exactly the key. Run `php artisan
+    | seo:ping` after publishing new content to submit URLs instantly.
+    */
+    'indexnow' => [
+        'key' => env('INDEXNOW_KEY', '284953b3d1df49429bfc0969d2075080'),
+    ],
+
     'pages' => [
         'home' => [
             'title' => 'Prakarsa Studio — Jasa Pembuatan Website & Aplikasi Web Profesional',
