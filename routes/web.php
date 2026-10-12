@@ -20,7 +20,6 @@ Route::post('/kontak', [ContactController::class, 'store'])
 
 Route::get('/sitemap.xml', function () {
     $siteUrl = rtrim((string) config('seo.site.url'), '/');
-
     $urls = [
         ['loc' => $siteUrl.'/', 'lastmod' => null, 'changefreq' => 'weekly', 'priority' => '1.0'],
         ['loc' => $siteUrl.'/tentang', 'lastmod' => null, 'changefreq' => 'monthly', 'priority' => '0.8'],
@@ -50,3 +49,15 @@ Route::get('/sitemap.xml', function () {
 
     return response($xml, 200, ['Content-Type' => 'application/xml; charset=UTF-8']);
 })->name('sitemap');
+
+/*
+| IndexNow key file. Served through Laravel so it works even when the host's
+| document root only mirrors selected static files (no public/ symlink).
+*/
+Route::get('/{key}.txt', function (string $key) {
+    $configured = (string) config('seo.indexnow.key');
+
+    abort_unless($configured !== '' && hash_equals($configured, $key), 404);
+
+    return response($key."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+})->where('key', '[A-Za-z0-9\-]+');

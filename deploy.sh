@@ -78,6 +78,27 @@ $PHP artisan migrate --force >>"$LOG" 2>&1
 # --- permissions ---
 chmod -R 775 storage bootstrap/cache 2>/dev/null
 
+# --- ensure public assets are mirrored into the web root (public_html) ---
+# The host serves from ~/public_html and only mirrors selected paths via
+# symlinks. Create/refresh them so new public files (OG images, IndexNow key,
+# built assets) are reachable without manual cPanel work.
+WEBROOT="$HOME/public_html"
+if [ -d "$WEBROOT" ]; then
+  for item in build images fonts robots.txt favicon.ico; do
+    if [ -e "public/$item" ]; then
+      ln -sfn "$APP_DIR/public/$item" "$WEBROOT/$item" 2>>"$LOG"
+    fi
+  done
+  # IndexNow key file: public/<key>.txt
+  for keyfile in public/*.txt; do
+    [ -e "$keyfile" ] || continue
+    base=$(basename "$keyfile")
+    # skip robots.txt (handled above)
+    [ "$base" = "robots.txt" ] && continue
+    ln -sfn "$APP_DIR/$keyfile" "$WEBROOT/$base" 2>>"$LOG"
+  done
+fi
+
 # --- rebuild caches ---
 $PHP artisan config:cache >>"$LOG" 2>&1
 $PHP artisan route:cache  >>"$LOG" 2>&1
