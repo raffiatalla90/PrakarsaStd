@@ -61,7 +61,7 @@ export default function Tentang() {
     return (
         <>
             <Head title="Tentang Kami — Jasa Pembuatan Website Bisnis | Prakarsa Studio">
-                <meta name="description" content="Prakarsa Studio adalah partner pembuatan website untuk bisnis Anda — company profile, landing page, hingga web application yang cepat, mudah ditemukan, dan siap mendatangkan hasil." />
+                <meta name="description" head-key="description" content="Prakarsa Studio adalah partner pembuatan website untuk bisnis Anda — company profile, landing page, hingga web application yang cepat, mudah ditemukan, dan siap mendatangkan hasil." />
             </Head>
             <a className="skip" href="#utama">Lewati ke konten</a>
             <Header active="tentang" isHome={false} />

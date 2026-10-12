@@ -61,8 +61,8 @@
         }
     @endphp
 
-    <title>{{ $meta['title'] }}</title>
-    <meta name="description" content="{{ $meta['description'] }}">
+    <title data-inertia="">{{ $meta['title'] }}</title>
+    <meta name="description" data-inertia="description" content="{{ $meta['description'] }}">
     <meta name="robots" content="{{ $meta['robots'] ?? 'index, follow' }}">
     <meta name="author" content="{{ $site['name'] }}">
     <link rel="canonical" href="{{ $canonical }}">
