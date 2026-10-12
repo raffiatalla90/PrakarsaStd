@@ -10,7 +10,7 @@
         $site = $seo['site'];
         $siteUrl = rtrim($site['url'], '/');
         $routeName = request()->route()?->getName();
-        $page = $seo['pages'][$routeName] ?? $seo['pages']['home'];
+        $meta = $seo['pages'][$routeName] ?? $seo['pages']['home'];
         $canonical = url()->current();
         $ogImage = $siteUrl.$site['og_image'];
         $logoUrl = $siteUrl.$site['logo'];
@@ -26,7 +26,7 @@
             'url' => $siteUrl,
             'logo' => $logoUrl,
             'image' => $ogImage,
-            'description' => $page['description'],
+            'description' => $meta['description'],
             'email' => $site['email'],
             'address' => [
                 '@type' => 'PostalAddress',
@@ -61,17 +61,17 @@
         }
     @endphp
 
-    <title>{{ $page['title'] }}</title>
-    <meta name="description" content="{{ $page['description'] }}">
-    <meta name="robots" content="{{ $page['robots'] ?? 'index, follow' }}">
+    <title>{{ $meta['title'] }}</title>
+    <meta name="description" content="{{ $meta['description'] }}">
+    <meta name="robots" content="{{ $meta['robots'] ?? 'index, follow' }}">
     <meta name="author" content="{{ $site['name'] }}">
     <link rel="canonical" href="{{ $canonical }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ $site['name'] }}">
     <meta property="og:locale" content="{{ $site['locale'] }}">
-    <meta property="og:title" content="{{ $page['title'] }}">
-    <meta property="og:description" content="{{ $page['description'] }}">
+    <meta property="og:title" content="{{ $meta['title'] }}">
+    <meta property="og:description" content="{{ $meta['description'] }}">
     <meta property="og:url" content="{{ $canonical }}">
     <meta property="og:image" content="{{ $ogImage }}">
     <meta property="og:image:width" content="1200">
@@ -79,8 +79,8 @@
     <meta property="og:image:alt" content="{{ $site['name'] }} — jasa pembuatan website & aplikasi web profesional.">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $page['title'] }}">
-    <meta name="twitter:description" content="{{ $page['description'] }}">
+    <meta name="twitter:title" content="{{ $meta['title'] }}">
+    <meta name="twitter:description" content="{{ $meta['description'] }}">
     <meta name="twitter:image" content="{{ $ogImage }}">
 
     <meta name="theme-color" content="#0B0E13">
