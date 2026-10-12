@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Splash from './Components/Splash';
 
 document.documentElement.classList.add('js');
+console.log('[prakarsa] build check');
 
 createInertiaApp({
     resolve: (name) => {
