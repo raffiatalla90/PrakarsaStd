@@ -598,33 +598,20 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); }
   mask-image: radial-gradient(ellipse 60% 55% at 50% 50%, #000 45%, transparent 100%);
 }
 .splash-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.4rem; padding: 0 1.5rem; text-align: center; }
-.splash-mark { position: relative; display: inline-block; overflow: hidden; }
-.splash-logo { display: block; height: clamp(1.8rem, 4.2vw, 2.9rem); width: auto; opacity: 0; transform: translateY(14px) scale(.96); }
-.splash-shine {
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, .55) 50%, transparent 62%);
-  background-size: 260% 100%; background-position: 180% 0;
-}
+.splash-stack { max-width: min(28rem, 84vw); opacity: 0; transform: translateY(16px) scale(.97); }
+.splash-stack .glass-panel-main { animation: none; transform: none; }
 .splash-rule { display: block; height: 2px; width: 0; border-radius: 999px; background: linear-gradient(90deg, transparent, var(--flame), transparent); }
-.splash-tag {
-  font-family: var(--head); font-size: .6875rem; font-weight: 500; letter-spacing: .32em; text-transform: uppercase;
-  color: rgba(238, 233, 223, .55); opacity: 0; transform: translateY(8px);
-}
 
-/* in: draw the wordmark, sweep the shine, grow the rule, settle the tagline */
-.splash-in .splash-logo { animation: splash-logo-in .85s var(--ease) .05s forwards; }
-.splash-in .splash-shine { animation: splash-shine 1.4s ease-in-out .35s 1; }
-.splash-in .splash-rule { animation: splash-rule-in .7s var(--ease) .45s forwards; }
-.splash-in .splash-tag { animation: splash-tag-in .7s var(--ease) .7s forwards; }
+/* in: rise the browser panel, grow the rule */
+.splash-in .splash-stack { animation: splash-panel-in .9s var(--ease) .05s forwards; }
+.splash-in .splash-rule { animation: splash-rule-in .7s var(--ease) .55s forwards; }
 
 /* out: whole curtain lifts and fades */
 .splash-out { animation: splash-out .75s var(--ease) forwards; }
 .splash-out .splash-inner { animation: splash-inner-out .6s var(--ease) forwards; }
 
-@keyframes splash-logo-in { to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes splash-shine { 0% { background-position: 180% 0; } 100% { background-position: -80% 0; } }
+@keyframes splash-panel-in { to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes splash-rule-in { to { width: min(15rem, 42vw); } }
-@keyframes splash-tag-in { to { opacity: 1; transform: translateY(0); } }
 @keyframes splash-out { to { opacity: 0; visibility: hidden; } }
 @keyframes splash-inner-out { to { opacity: 0; transform: translateY(-14px) scale(.98); } }
 

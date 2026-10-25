@@ -42,12 +42,24 @@ export default function Splash() {
     return (
         <div className={`splash splash-${phase}`} aria-hidden="true">
             <div className="splash-inner">
-                <div className="splash-mark">
-                    <span className="splash-shine" />
-                    <img className="splash-logo" src="/images/prakarsa-logo-wordmark.png" width="1000" height="133" alt="" decoding="async" />
+                <div className="glass-stack splash-stack">
+                    <div className="glass-panel glass-panel-main">
+                        <span className="glass-glow" aria-hidden="true" />
+                        <div className="glass-chrome">
+                            <span className="dots"><i /><i /><i /></span>
+                            <span className="glass-url">prakarsa.studio</span>
+                        </div>
+                        <div className="glass-body">
+                            <p className="glass-eyebrow">COMPANY PROFILE WEBSITES</p>
+                            <p className="glass-title">Crafted to<br />command trust.</p>
+                            <div className="glass-meta">
+                                <span>Prakarsa</span>
+                                <span>STUDIO / EST. 2026</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <span className="splash-rule" />
-                <p className="splash-tag">The First Step in Digital Innovation</p>
             </div>
         </div>
     );
