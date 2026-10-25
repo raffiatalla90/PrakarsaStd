@@ -26,11 +26,11 @@ export default function Portfolio() {
                 <article className="case case-wide" data-reveal>
                     <div className="stage stage-warm" data-reveal>
                         <div className="shot-combo umkm-combo">
-                        <Mock className="mock-desk" url="lapakwarga.id">
+                        <Mock className="mock-desk" url="umkm.id">
                             <div className="desk">
                                 <div className="desk-bar">
-                                    <b>lapak<span>warga.id</span></b>
-                                    <ul><li>UMKM</li><li>Kuliner</li><li>Toko</li><li>Jasa</li></ul>
+                                    <b>UMKM</b>
+                                    <ul><li>Beranda</li><li>Kuliner</li><li>Toko</li><li>Jasa</li></ul>
                                     <span className="desk-cta">Daftarkan Usaha</span>
                                 </div>
                                 <div className="desk-hero">
@@ -66,7 +66,7 @@ export default function Portfolio() {
                             <span className="umkm-notch" />
                             <div className="umkm-screen">
                                 <div className="umkm-hero">
-                                    <b className="umkm-brand">lapakwarga.id</b>
+                                    <b className="umkm-brand">UMKM</b>
                                     <Icon d="M8 2v4M12 2v4M4 6h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z" />
                                     <span>Belum ada event aktif</span>
                                 </div>
@@ -110,7 +110,7 @@ export default function Portfolio() {
                                     <li><Icon d="M16 20v-1.6a3.4 3.4 0 0 0-3.4-3.4H7.4A3.4 3.4 0 0 0 4 18.4V20M10 11.6a3.6 3.6 0 1 0 0-7.2 3.6 3.6 0 0 0 0 7.2Zm10 8.4v-1.4a3.4 3.4 0 0 0-2.6-3.3M15.4 4.6a3.6 3.6 0 0 1 0 7" /></li>
                                     <li className="umkm-avatar" />
                                 </ul>
-                                <span className="umkm-url">lapakwarga.id</span>
+                                <span className="umkm-url">umkm.id</span>
                             </div>
                         </div>
                         </div>
