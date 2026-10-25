@@ -77,14 +77,6 @@ export default function Hero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="glass-chip glass-chip-a" aria-hidden="true">
-                            <span className="chip-k">Company Profile</span>
-                            <span className="chip-v">Desain & Build</span>
-                        </div>
-                        <div className="glass-chip glass-chip-b" aria-hidden="true">
-                            <span className="chip-k">Pengembangan</span>
-                            <span className="chip-v">Cepat & Terukur</span>
-                        </div>
                     </div>
                 </div>
             </div>
