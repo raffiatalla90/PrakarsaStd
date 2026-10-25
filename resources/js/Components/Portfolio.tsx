@@ -17,24 +17,28 @@ export default function Portfolio() {
 
                 <article className="case case-wide" data-reveal>
                     <div className="stage stage-warm" data-reveal>
-                        <Mock className="mock-forma">
+                        <Mock className="mock-forma" url="kopirempah.id">
                             <div className="forma">
-                                <span className="forma-brand">FORMA</span>
-                                <span className="forma-nav">Work Studio Contact</span>
-                                <p className="forma-eyebrow">INDEPENDENT ARCHITECTURE</p>
-                                <p className="forma-title">Spaces with<br />meaning.</p>
-                                <span className="forma-foot">Selected projects</span>
-                                <span className="forma-down">↓</span>
+                                <span className="forma-brand">KOPI REMPAH</span>
+                                <span className="forma-nav">Produk Tentang Kontak</span>
+                                <p className="forma-eyebrow">KOPI SANGRAI · BANDUNG</p>
+                                <p className="forma-title">Dari kebun,<br />ke cangkir.</p>
+                                <div className="forma-goods">
+                                    <span><b>Arabika Gayo</b>Rp 85.000</span>
+                                    <span><b>Robusta Temanggung</b>Rp 65.000</span>
+                                    <span><b>House Blend</b>Rp 75.000</span>
+                                </div>
+                                <span className="forma-foot">Pesan via WhatsApp</span>
                             </div>
                         </Mock>
                     </div>
                     <div className="case-meta">
                         <div>
-                            <p className="caps caps-flame">01 / Business Website</p>
-                            <h3>Identitas digital yang membangun kepercayaan.</h3>
+                            <p className="caps caps-flame">01 / Website UMKM — Toko Produk</p>
+                            <h3>Toko online yang membuat produk lokal mudah dibeli.</h3>
                         </div>
                         <div className="case-side">
-                            <p>Website responsif dengan narasi visual kuat dan pengalaman pengguna yang terarah.</p>
+                            <p>Katalog produk, harga, dan tombol pesan langsung ke WhatsApp — dibuat ringan agar tetap cepat dibuka dari HP pembeli.</p>
                             <ul className="pills">
                                 <li>Strategy</li>
                                 <li>UI/UX</li>
