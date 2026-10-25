@@ -24,7 +24,7 @@
   --line: rgba(238, 233, 223, .12);
   --ink-muted: #8A93A0;
   --pad: 5vw;
-  --head: "Instrument Sans", "DM Sans", system-ui, sans-serif;
+  --head: "General Sans", "Instrument Sans", system-ui, sans-serif;
   --body: "Averia Serif Libre", Georgia, serif;
   --ease: cubic-bezier(.16, 1, .3, 1);
 }

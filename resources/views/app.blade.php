@@ -172,7 +172,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">{!! json_encode($org, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
     <script type="application/ld+json">{!! json_encode($website, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
@@ -206,7 +208,7 @@
     </script>
     <!--
     THESIS: a studio with no portfolio yet proves its craft through the page itself; the staircase (cover blocks, stepped P) is the one idea, and the hero refuses the centered-headline-plus-gradient-blob default.
-    OWN-WORLD: anchorfish dark with a flame/truffle bloom behind three stepped site frames; palladian and oatmeal light sections; flame fills; DM Sans 800 headlines, Averia Serif body; 16px panels, 10px controls.
+    OWN-WORLD: anchorfish dark with a flame/truffle bloom behind three stepped site frames; palladian and oatmeal light sections; flame fills; General Sans headlines, Averia Serif body; 16px panels, 10px controls.
     STORY: visitor sees what Prakarsa builds (company profile, landing page, web app), believes the process is clear, starts a conversation.
     FIRST VIEWPORT: left headline "Initiating Tomorrow's Website Solution" at ~5.5rem with flame "Website", tagline, two buttons (primary flame "Diskusikan Website Anda"); right a diagonal staircase of three frames over the bloom.
     FORM: moodboard-pinned, user-selected direction (no roll); seed none; code-led.
