@@ -26,15 +26,15 @@ export default function Portfolio() {
                 <article className="case case-wide" data-reveal>
                     <div className="stage stage-warm" data-reveal>
                         <div className="shot-combo umkm-combo">
-                        <Mock className="mock-desk" url="sumilir.web.id">
+                        <Mock className="mock-desk" url="lapakwarga.id">
                             <div className="desk">
                                 <div className="desk-bar">
-                                    <b>sumilir<span>.id</span></b>
+                                    <b>lapak<span>warga.id</span></b>
                                     <ul><li>UMKM</li><li>Kuliner</li><li>Toko</li><li>Jasa</li></ul>
                                     <span className="desk-cta">Daftarkan Usaha</span>
                                 </div>
                                 <div className="desk-hero">
-                                    <p className="desk-eyebrow">DIREKTORI UMKM · BANYUANYAR</p>
+                                    <p className="desk-eyebrow">DIREKTORI UMKM · SEKITARMU</p>
                                     <p className="desk-h">Temukan UMKM<br />yang Kamu Butuhkan</p>
                                     <div className="desk-search"><span>Cari produk, jasa, atau UMKM...</span><b>Search</b></div>
                                 </div>
@@ -66,6 +66,7 @@ export default function Portfolio() {
                             <span className="umkm-notch" />
                             <div className="umkm-screen">
                                 <div className="umkm-hero">
+                                    <b className="umkm-brand">lapakwarga.id</b>
                                     <Icon d="M8 2v4M12 2v4M4 6h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z" />
                                     <span>Belum ada event aktif</span>
                                 </div>
@@ -80,7 +81,7 @@ export default function Portfolio() {
                                     <li><span className="umkm-ico"><Icon d="M14.5 3.5a4.2 4.2 0 0 0-5.6 5.4L3 14.8 6.2 18l5.9-5.9a4.2 4.2 0 0 0 5.4-5.6l-2.4 2.4-2.1-2.1 2.4-2.4Z" /></span>Jasa</li>
                                 </ul>
                                 <p className="umkm-h">Temukan UMKM yang Kamu Butuhkan</p>
-                                <p className="umkm-sub">Pilihan UMKM terbaik di Banyuanyar</p>
+                                <p className="umkm-sub">Pilihan UMKM terbaik di sekitarmu</p>
                                 <div className="umkm-grid">
                                     <div className="umkm-card">
                                         <span className="umkm-tag">UMKM Kuliner</span>
@@ -109,7 +110,7 @@ export default function Portfolio() {
                                     <li><Icon d="M16 20v-1.6a3.4 3.4 0 0 0-3.4-3.4H7.4A3.4 3.4 0 0 0 4 18.4V20M10 11.6a3.6 3.6 0 1 0 0-7.2 3.6 3.6 0 0 0 0 7.2Zm10 8.4v-1.4a3.4 3.4 0 0 0-2.6-3.3M15.4 4.6a3.6 3.6 0 0 1 0 7" /></li>
                                     <li className="umkm-avatar" />
                                 </ul>
-                                <span className="umkm-url">sumilir.web.id</span>
+                                <span className="umkm-url">lapakwarga.id</span>
                             </div>
                         </div>
                         </div>

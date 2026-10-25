@@ -294,7 +294,8 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); }
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 .umkm-screen svg { width: 100%; height: 100%; display: block; }
-.umkm-hero { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6cqw; height: 27cqw; background: #1B9CEE; color: #fff; font-size: 3.2cqw; font-weight: 700; }
+.umkm-brand { position: absolute; top: 2.4cqw; left: 5cqw; font-size: 2.9cqw; font-weight: 700; letter-spacing: -0.01em; }
+.umkm-hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6cqw; height: 27cqw; background: #1B9CEE; color: #fff; font-size: 3.2cqw; font-weight: 700; }
 .umkm-hero svg { width: 6cqw; height: 6cqw; opacity: .9; }
 .umkm-search { display: flex; align-items: center; gap: 2cqw; margin: -7cqw 5cqw 0; padding: 2.4cqw; background: #fff; border-radius: 3cqw; box-shadow: 0 4cqw 9cqw -3cqw rgba(0, 0, 0, .3); }
 .umkm-input { flex: 1; min-width: 0; padding: 2cqw 2.6cqw; border: 1px solid #F5C77E; border-radius: 999px; font-size: 2.7cqw; color: #8A8A8A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
