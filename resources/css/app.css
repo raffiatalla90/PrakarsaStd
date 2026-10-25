@@ -663,6 +663,20 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); }
 .splash-stack .glass-panel-main { animation: none; transform: none; }
 .splash-rule { display: block; height: 2px; width: 0; border-radius: 999px; background: linear-gradient(90deg, transparent, var(--flame), transparent); }
 
+/* splash keeps the original card look, independent of the hero redesign */
+.splash-stack .glass-panel::before { display: none; }
+.splash-stack .glass-chrome { padding: .7rem .9rem; background: rgba(0, 0, 0, .22); border-bottom: 1px solid var(--glass-line); }
+.splash-stack .glass-chrome .dots i { width: 5px; height: 5px; background: rgba(238, 233, 223, .5); }
+.splash-stack .glass-url { font-size: .5625rem; font-weight: 400; letter-spacing: .1em; color: rgba(238, 233, 223, .6); }
+.splash-stack .glass-glow { top: -34%; right: -22%; bottom: auto; width: 68%; filter: blur(26px); opacity: .9;
+  background: radial-gradient(circle at 40% 40%, #FFC987 0%, #F0A15E 30%, #C05F38 55%, rgba(124, 67, 49, 0) 78%); }
+.splash-stack .glass-body { min-height: 15rem; padding: 1.8rem; gap: .5rem; justify-content: flex-end; }
+.splash-stack .glass-eyebrow { padding: 0; margin: 0; border: 0; background: none; border-radius: 0;
+  font-size: .625rem; font-weight: 400; letter-spacing: .24em; color: var(--flame); }
+.splash-stack .glass-title { margin-top: 0; padding-top: 0; font-size: clamp(1.7rem, 2.9vw, 2.5rem); line-height: 1; letter-spacing: -0.02em; }
+.splash-stack .glass-meta { margin-top: 1.2rem; padding-top: 0; border-top: 0;
+  font-size: .5625rem; letter-spacing: .14em; color: rgba(238, 233, 223, .66); }
+
 /* in: rise the browser panel, grow the rule */
 .splash-in .splash-stack { animation: splash-panel-in .9s var(--ease) .05s forwards; }
 .splash-in .splash-rule { animation: splash-rule-in .7s var(--ease) .55s forwards; }
